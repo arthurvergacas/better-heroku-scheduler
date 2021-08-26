@@ -52,7 +52,7 @@ Now, you can open the browser and see your brand new app using:
   heroku open
 ```
 
-Alternatively, you can just go to your Heroku dashboard and find your app.
+Alternatively, you can just go to your Heroku dashboard and find it there.
 
 ### Setting everything up
 
