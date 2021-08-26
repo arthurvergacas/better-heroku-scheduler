@@ -11,7 +11,6 @@ credentials = {
 bot = Bot(credentials)
 
 try:
-    print(sys.argv[1], sys.argv[2])
     bot.activate_dyno(sys.argv[1], sys.argv[2])
 except Exception as e:
     print(f"""Something went wrong.

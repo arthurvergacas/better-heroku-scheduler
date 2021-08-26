@@ -35,12 +35,12 @@ class Bot:
         print("Entering Heroku...")
 
         # accept all cookies
-        accept_all_cookies_button = self.wait.until(
-            EC.element_to_be_clickable(
-                (By.CSS_SELECTOR, "#onetrust-accept-btn-handler"))
-        )
+        # accept_all_cookies_button = self.wait.until(
+        #     EC.element_to_be_clickable(
+        #         (By.CSS_SELECTOR, "#onetrust-accept-btn-handler"))
+        # )
 
-        accept_all_cookies_button.click()
+        # accept_all_cookies_button.click()
 
         print(f"Entering form data for {self.credentials['email']}...")
 
