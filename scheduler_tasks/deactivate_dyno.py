@@ -1,6 +1,7 @@
 from heroku_bot import Bot
 
 import os
+import sys
 
 credentials = {
     "email": os.environ.get("HEROKU_CREDENTIALS_EMAIL"),
@@ -10,7 +11,7 @@ credentials = {
 bot = Bot(credentials)
 
 try:
-    bot.deactivate_dyno(os.environ.get("APP_NAME"))
+    bot.deactivate_dyno(sys.argv[1], sys.argv[2])
 except Exception as e:
     print(f"""Something went wrong.
         Error: {e}.
