@@ -10,7 +10,9 @@ At that point I decided that it was enough, and commited myself to find a soluti
 
 However, if you have for example, a [Telegram Bot](https://core.telegram.org/bots) that you want to work from 7am to 11pm, you won't be able to do much with Heroku Scheduler. After all, it's in their docs:
 
-> Scheduled jobs are meant to execute short running tasks or enqueue longer running tasks into a background job queue. Anything that takes longer than a couple of minutes to complete should use a worker dyno to run. _[Heroku Scheduler docs about long-running jobs](https://devcenter.heroku.com/articles/scheduler#long-running-jobs)_
+> Scheduled jobs are meant to execute short running tasks or enqueue longer running tasks into a background job queue. Anything that takes longer than a couple of minutes to complete should use a worker dyno to run.
+>
+> _[Heroku Scheduler docs about long-running jobs](https://devcenter.heroku.com/articles/scheduler#long-running-jobs)_
 
 So, how to proceed? Well, I don't know if it's the best approach, but I took the **enqueue longer running tasks** to the letter, and set up a script that would turn on and off my dynos. Since I think more people can make use of this, I'm making it available here. Nothing fancy to be honest, and you could just like me spend a day implementing this yourself. But if it's already done, why not right?
 
@@ -42,7 +44,7 @@ After that, it's time to create an app on Heroku. You can do this easily using t
   heroku create better-scheduler
 ```
 
-This will create a new app called `better-scheduler`, but you can call it whatever you want. _For example, `telegram-bot-scheduler`._
+This will create a new app called `better-scheduler`, but you can call it whatever you want.
 
 Now, you can open the browser and see your brand new app using:
 
@@ -63,8 +65,8 @@ Below App Information, you will find the field **Config Vars**. Click to reveal 
 - **KEY:** CHROMEDRIVER_PATH | **VALUE:** /app/.chromedriver/bin/chromedriver
 - **KEY:** GOOGLE_CHROME_BIN | **VALUE:** /app/.apt/usr/bin/google-chrome
 - **KEY:** GOOGLE_CHROME_BIN | **VALUE:** /app/.apt/usr/bin/google-chrome
-- **KEY:** HEROKU*CREDENTIALS_EMAIL | **VALUE:** \_The email used to log in your Heroku Account*
-- **KEY:** HEROKU*CREDENTIALS_PASSWORD | **VALUE:** \_The password used to log in your Heroku Account*
+- **KEY:** HEROKU_CREDENTIALS_EMAIL | **VALUE:** _The email used to log in your Heroku Account_
+- **KEY:** HEROKU_CREDENTIALS_PASSWORD | **VALUE:** _The password used to log in your Heroku Account_
 
 > Two things are worth remembering here:
 >
