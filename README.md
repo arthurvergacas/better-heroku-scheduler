@@ -64,7 +64,6 @@ Below App Information, you will find the field **Config Vars**. Click to reveal 
 
 - **KEY:** CHROMEDRIVER_PATH | **VALUE:** /app/.chromedriver/bin/chromedriver
 - **KEY:** GOOGLE_CHROME_BIN | **VALUE:** /app/.apt/usr/bin/google-chrome
-- **KEY:** GOOGLE_CHROME_BIN | **VALUE:** /app/.apt/usr/bin/google-chrome
 - **KEY:** HEROKU_CREDENTIALS_EMAIL | **VALUE:** _The email used to log in your Heroku Account_
 - **KEY:** HEROKU_CREDENTIALS_PASSWORD | **VALUE:** _The password used to log in your Heroku Account_
 
