@@ -60,7 +60,7 @@ After you created your app and everything seems OK, it's time to configure the e
 
 #### Create the environment variables
 
-Below App Information, you will find the field **Config Vars**. Click to reveal the vars and add the following:
+Below **App Information**, you will find the field **Config Vars**. Click to reveal the vars and add the following:
 
 - **KEY:** CHROMEDRIVER_PATH | **VALUE:** /app/.chromedriver/bin/chromedriver
 - **KEY:** GOOGLE_CHROME_BIN | **VALUE:** /app/.apt/usr/bin/google-chrome
