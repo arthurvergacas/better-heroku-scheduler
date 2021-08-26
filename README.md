@@ -100,7 +100,7 @@ Now, in the **Run Command** field, you need to tell the scheduler what task you 
   python activate_dyno.py <name_of_your_app> <process_of_your_dyno>
 ```
 
-Here, the `name_of_your_app` is the name of the app that you want to control. In our case, this might be something like `telegram-bot`.
+Here, the `name_of_your_app` is the name of the existing app that you want to control. In our case, this might be something like `telegram-bot`.
 
 `process_of_your_dyno`, on the other hand, is the command that the dyno executes. For example, in our Telegram Bot we might have the worker dyno `python bot.py`. It's important to notice the space between words here. To handle this, you can use "double quotes" or back\ slashes.
 
