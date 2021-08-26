@@ -11,7 +11,7 @@ import os
 
 class Bot:
 
-    def __init__(self, credentials={"email": "example@example.com", "password": "password123"}):
+    def __init__(self, credentials):
 
         options = Options()
         options.headless = True  # comment this line if you want to debug
@@ -31,19 +31,12 @@ class Bot:
         self.credentials = credentials
 
     def enter_heroku(self):
-        self.driver.get("https://id.heroku.com/login")
         print("Entering Heroku...")
 
-        # accept all cookies
-        # accept_all_cookies_button = self.wait.until(
-        #     EC.element_to_be_clickable(
-        #         (By.CSS_SELECTOR, "#onetrust-accept-btn-handler"))
-        # )
-
-        # accept_all_cookies_button.click()
+        self.driver.get("https://id.heroku.com/login")
 
         print(f"Entering form data for {self.credentials['email']}...")
-
+        
         # fill up form
         email_field = self.wait.until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "#email"))
@@ -67,7 +60,7 @@ class Bot:
         print("Successfully entered Heroku!")
 
         # wait the dashboard to load
-        sleep(5)
+        sleep(3)
 
     def activate_dyno(self, app_name, dyno_identifier):
 
@@ -107,6 +100,7 @@ class Bot:
             activation_slider.click()
         # if it is, just close the browser - there's nothing to do here
         else:
+            print("Dyno already activated!")
             self.end_session()
             return
 
@@ -161,6 +155,7 @@ class Bot:
             deactivation_slider.click()
         # if it isn't, just close the browser - there's nothing to do here
         else:
+            print("Dyno already deactivated!")
             self.end_session()
             return
 
